@@ -61,6 +61,15 @@ function chillHop() {
       id: uuidv4(),
       active: false,
     },
+    {
+      name: "Deeper",
+      cover: "https://chillhop.com/wp-content/uploads/2020/10/23fdd99adc3e16abcb67b004ea3e748ebf433a49-1024x1024.jpg",
+      artist: "Aviino",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10460",
+      color: ["#CF71BB", "#23315E"],
+      id: uuidv4(),
+      active: false,
+    },
     //ADD MORE HERE
   ];
 }

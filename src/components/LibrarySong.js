@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
+import {playAudio} from "../util";
 
 const LibrarySong = ({id, song, songs, setcurrentSong, setSongs, audioRef, isPlaying}) => {
     const songSelectHandler = () => {
@@ -15,14 +16,8 @@ const LibrarySong = ({id, song, songs, setcurrentSong, setSongs, audioRef, isPla
             }
         })
         setSongs(newSongs);
-        if (isPlaying) {
-            const playPromise = audioRef.current.play();
-            if (playPromise !== undefined) {
-                playPromise.then((audio) => {
-                    audioRef.current.play();
-                });
-            }
-        }
+        // check if the song is playing
+        playAudio(isPlaying, audioRef);
     }
     return (
         <div className={`library-song ${song.active ? 'selected' : ""}`} onClick={songSelectHandler}>

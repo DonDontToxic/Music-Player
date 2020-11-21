@@ -4,11 +4,10 @@ import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
-
 // Import style
 import "./styles/app.scss"
 // Import Util
-import data from "./util"
+import data from "./data"
 
 function App() {
   // Ref
@@ -33,12 +32,15 @@ function App() {
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus}/>
       <Song currentSong={currentSong}/>
       <Player 
+        songs={songs}
+        setSongs={setSongs}
         audioRef={audioRef}
         setSongInfo={setSongInfo}
         songInfo={songInfo}
         setIsPlaying={setIsPlaying} 
         isPlaying={isPlaying} 
-        currentSong={currentSong}/>
+        currentSong={currentSong}
+        setcurrentSong={setcurrentSong}/>
         <Library 
           libraryStatus={libraryStatus}
           setSongs={setSongs}
